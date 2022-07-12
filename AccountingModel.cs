@@ -31,7 +31,7 @@ namespace HotelAccounting
             get { return nightsCount; }
             set
             {
-                if (value < 0)
+                if (value <= 0)
                     throw new ArgumentException();
                 nightsCount = value;
                 total = price * nightsCount * (1 - discount / 100);
@@ -68,8 +68,6 @@ namespace HotelAccounting
                 Notify(nameof(Total));
                 Notify(nameof(Discount));
             }
-
         }
-    }
-    
+    }    
 }
